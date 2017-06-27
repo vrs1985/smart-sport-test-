@@ -1,0 +1,4 @@
+/node_modules/*
+/dis/*
+*.log
+.git
