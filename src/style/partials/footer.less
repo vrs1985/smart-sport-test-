@@ -1,0 +1,117 @@
+.ftr{
+    height: auto;
+    background: @gray-base;
+    padding: @padding-large-horizontal;
+    color: @gray-light;
+    &-logo{
+        width: 171px;
+    }
+    &-about-text{
+        display: block;
+        line-height: @line-height-computed;
+        margin-top: 2.3em;
+        letter-spacing: 1.4px;
+    }
+    &-engine{
+        font-size: @font-size-base ;
+        line-height: @line-height-computed;
+    }
+    &-title{
+        font-size: @font-size-large;
+        color: @white;
+        line-height: @line-height-computed;
+        text-transform: uppercase;
+        margin-bottom: (@font-size-large * 2);
+    }
+    &-contact{
+        &-email, &-phone,
+        &-skype{
+            display: block;
+            margin-bottom: @font-size-small;
+            &:hover{
+                color: @white;
+                .transition(all .3s linear);
+            }
+            &:before{
+                font-family: FontAwesome;
+                margin-left: @font-size-large;
+                @media (max-width: @screen-sm-min) {
+                    margin-left: 0;
+                }
+                @media (max-width: @screen-xs) {
+                    margin-left: 0;
+                }
+            }
+            & a{
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+        &-email:before{
+            content: '\f0e0';
+        }
+        &-phone:before{
+            content: '\f095';
+        }
+        &-skype:before{
+            content: '\f17e';
+        }
+        &-info{
+            padding-left: 1em;
+        }
+    }
+    &-nav-menu{
+        list-style-type: none;
+        padding: 0;
+        & li{
+            margin-bottom: @font-size-small;
+            .transition(all .3s linear);
+            &:hover{
+                color: @white;
+            }
+            & a{
+                color: inherit;
+                text-decoration: none;
+            }
+        }
+    }
+    &-soc-media{
+        font-family: FontAwesome;
+        font-size: @font-size-h3;
+        margin-right: @font-size-large;
+        text-decoration: none;
+        color: inherit;
+        .transition(all .3s linear);
+        &:hover{
+            color: @white;
+            text-decoration: none;
+        }
+    }
+}
+.smedia{
+    &-vk{
+        &:after{
+            content: '\f189';
+        }
+    }
+    &-facebook{
+        &:after{
+            content: '\f09a';
+        }
+    }
+    &-linkedin{
+        &:after{
+            content: '\f0e1';
+        }
+    }
+    &-youtube{
+        &:after{
+            content: '\f16a';
+        }
+    }
+    &-twitter{
+        &:after{
+            content: '\f099';
+        }
+    }
+}

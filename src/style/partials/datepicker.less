@@ -1,0 +1,43 @@
+.datepicker{
+    &-group{
+        display: inline-block;
+        position: relative;
+        width: 50%;
+        float: left;
+        border: 2px solid;
+        border-color: @input-border;
+        &:after{
+            font-family: FontAwesome;
+            font-size: @font-size-h3;
+            position: absolute;
+            display: inline-block;
+            color: @input-border;
+            right: .5em;
+            content: "\f073";
+            .translate(0, 3px);
+            opacity: .99;
+            z-index: 1;
+        }
+        &:first-child{
+            border-radius: @border-radius-base 0 0 @border-radius-base;
+        }
+        &:last-child{
+            border-radius: 0 @border-radius-base @border-radius-base 0;
+        }
+    }
+    &-input{
+        font-size: @font-size-large;
+        padding: @padding-base-horizontal (@padding-base-horizontal * 3);
+        padding-right: (@padding-base-horizontal * 3);
+        background: transparent;
+        text-align: left;
+        width: 100%;
+        height: 100% !important;
+        border: none;
+        z-index: 999;
+    }
+}
+.input-daterange{
+    cursor: pointer;
+    margin-bottom: @font-size-base;
+}

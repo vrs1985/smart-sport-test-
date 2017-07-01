@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="850px" height="50px" x="0px" y="0px" viewBox="0 0 3263 130" xml:space="preserve">
+<defs>
+		 <style>
+		.fill-bar-path{
+		  stroke-dasharray: 2300;
+		  stroke-dashoffset: 2300;
+		  stroke-miterlimit: 10;
+		  stroke: #44bef1;
+		  stroke-width: 3;
+		  fill: #44bef1;
+		  fill-opacity: 0;
+		  animation: dash 5s linear alternate 4s;
+		}
+		.Animate-Draw{
+			fill-opacity: 0;
+			animation-timing-function: linear;
+			animation-fill-mode: forwards;
+			animation-iteration: 1;
+			animation-name: DrawLine, FillIn;
+			animation-duration: 4s, 2s;
+  			animation-delay: 0s, 4.5s;
+		}
+		@keyframes DrawLine {
+		  to { stroke-dashOffset: 0; }
+		}
+		@keyframes FillIn {
+		  from { fill-opacity: 0; }
+		  to { fill-opacity: 1; }
+		}
+
+
+
+		 </style>
+</defs>
+
+<use class="" />
+<g>
+	<!-- first bar -->
+	<text font-family="Verdana" font-size="75px" x="45px" y="25px" fill="#4ABEF1">100% из 100%</text>
+	<path d="M 40 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
+  	<path class="fill-bar-path Animate-Draw" d="M 40 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" />
+  	<!-- second bar -->
+  	<text font-family="Verdana" font-size="75px" x="1110px" y="25px" fill="#4ABEF1">100% из 100%</text>
+	<path d="M 1100 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
+  	<path class="fill-bar-path Animate-Draw" d="M 1100 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z"  />
+	<!-- third bar -->
+	<text font-family="Verdana" font-size="75px" x="2160px" y="25px" fill="#4ABEF1">10% из 100%</text>
+	<path d="M 2150 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
+  	<path class="fill-bar-path Animate-Draw" d="M 2150 80 l 100 0 a 40 20 0 0 1 0 40 l -100 0 a 40 20 0 0 0 0 -40z"  />
+
+</g>
+</svg>

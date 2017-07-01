@@ -1,0 +1,171 @@
+.help-bulb{
+    width: 50%;
+    height: 50%;
+}
+.margin-xs{
+    @media (max-width: @screen-sm-min) {
+        margin-top: 2em;
+        text-align: right;
+        float: right !important;
+    }
+    @media (max-width: @screen-xs) {
+        margin-top: 2em;
+        text-align: right;
+        float: right !important;
+    }
+}
+.season{
+    padding-top: (@line-height-computed * 6.5);
+    &-subtitle{
+        font-size: @font-size-h4;
+        display: block;
+    }
+    &-title{
+        margin-top: 0;
+        line-height: 1;
+        letter-spacing: 0.1em;
+    }
+    &-progress-bar{
+        display: block;
+    }
+    &-help{
+        padding: @padding-base-horizontal @padding-large-horizontal;
+        max-width: 100%;
+        max-height: auto;
+        border: 1px solid transparent;
+        border-color: @btn-default-border;
+        background: @snow;
+        border-radius: @border-radius-large;
+        &-picture{
+            display: block;
+            margin: auto;
+            text-align: center;
+        }
+        &-text{
+            margin: (@font-size-base * 1.6) auto;
+            line-height: @line-height-small;
+            letter-spacing: 1px;
+        }
+    }
+}
+.shedule{
+    margin: 2em 0;
+    &-input-time{
+        margin: @padding-xs-horizontal @padding-large-horizontal @padding-base-horizontal;
+        font-size: @font-size-large;
+        width: (@line-height-computed * 5) !important;
+        height: auto;
+        padding: @padding-large-vertical @padding-large-horizontal;
+        @media (max-width: @screen-sm-min) {
+            display: inline-block;
+        }
+        @media (max-width: @screen-xs) {
+            display: inline-block;
+        }
+    }
+}
+input[type="checkbox"]{
+    @media (max-width: @screen-xs) {
+        margin-left: 0 !important;
+        &.form-control+label{
+            margin-right: 0px !important;
+            margin-left: 6px !important;
+        }
+    }
+    @media (max-width: @screen-sm-min) {
+        margin-left: 0 !important;
+        &.form-control+label{
+            margin-right: 0px !important;
+            margin-left: 6px !important;
+        }
+    }
+}
+.checkbox{
+    @media (max-width: @screen-xs) {
+        margin-top: 0;
+        &:first-child{
+            margin-left: @font-size-base;
+        }
+    }
+    @media (max-width: @screen-sm-min) {
+        margin-top: 0;
+        &:first-child{
+            margin-left: @font-size-base;
+        }
+    }
+}
+.form-inline .form-group{
+    @media (max-width: @screen-sm-min) {
+        display: inline-block;
+        margin: 0;
+        margin-top: 15px;
+    }
+    @media (max-width: @screen-xs) {
+        display: inline-block;
+        margin: 0;
+        margin-top: 15px;
+    }
+}
+.text-valign-middle{
+    line-height: 3;
+}
+.table-list{
+    margin: @font-size-h4 0;
+    width: 100%;
+    & tr{
+        & td:first-child{
+            color: @brand-primary;
+            width: 97%;
+        }
+    }
+    .country-name{
+        display: inline-block;
+        width: 97%;
+    }
+}
+.v-middle{
+    margin-top: @font-size-base;
+}
+.v-large{
+    margin-top: @font-size-large;
+}
+.v-huge{
+    margin-top: (@line-height-computed * 2);
+    @media (max-width: @screen-sm-min) {
+        margin-top: @line-height-computed ;
+    }
+    @media (max-width: @screen-xs) {
+        margin-top: @line-height-computed ;
+    }
+}
+.btn-group .caregory{
+    @media (max-width: @screen-sm-min) {
+        padding: @padding-small-vertical 2px;
+    }
+    @media (max-width: @screen-xs) {
+        padding: @padding-small-vertical 2px;
+    }
+}
+.center-text{
+    text-align: center;
+}
+.nowrap{
+    white-space: nowrap !important;
+}
+.category-price-title{
+    & :nth-child(2),
+    :nth-child(3),
+    :nth-child(4){
+        color: @brand-primary;
+        border: 1px solid;
+        padding: (@padding-base-vertical * 2) (@padding-base-horizontal * 2);
+    }
+    &:nth-child(2){
+        -webkit-border-radius: @border-radius-small 0 0 @border-radius-small;
+        border-radius: @border-radius-small 0 0 @border-radius-small;
+    }
+    &:last-child{
+        -webkit-border-radius: 0 @border-radius-small @border-radius-small 0;
+                border-radius: 0 @border-radius-small @border-radius-small 0;
+        }
+}

@@ -17,8 +17,8 @@ var path = {
   },
   src: {
     html: 'src/**/*.html',
-    css: 'src/style/**/*.less',
-    js: 'src/js/*.js',
+    css: 'src/style/*.less',
+    js: 'src/js/**/*.js',
   },
   watch: {
     html: 'src/**/*.html',

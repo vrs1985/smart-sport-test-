@@ -1,0 +1,75 @@
+.header{
+    padding: @line-height-computed;
+    height: auto;
+    color: @white;
+    background-color: @gray-base;
+    &-logo{
+        width: 150px;
+        height: auto;
+    }
+    &-signIn{
+        display: inline-block;
+        margin-left: 8px;
+        vertical-align: middle;
+        cursor: pointer;
+        a{
+            color: @white;
+        }
+        &-logo{
+            font-size: @font-size-large;
+        }
+        &-text{
+
+        }
+    }
+}
+.bg-none{
+    background: transparent;
+}
+#menu-xs{
+    font-size: @font-size-h1;
+}
+.chg-lang{
+    display: inline-block;
+    margin: 0 0 0 2em;
+    padding: 0;
+    list-style-type: none;
+    &:hover &-content{
+        display: block;
+    }
+    &-content{
+        display: none;
+        position: absolute;
+        padding: @padding-base-vertical @padding-base-horizontal;
+        width: 70px;
+        border-radius: @border-radius-small;
+        background: @white;
+        cursor: pointer;
+        .transition(all .3s linear);
+        a{
+            font-weight: 600;
+            text-decoration: none !important;
+            color: @gray-base;
+        }
+        &:first-child{
+            display: block;
+            position: relative;
+        }
+        &:hover{
+            background: @brand-primary;
+        }
+    }
+}
+#version {
+    padding: 2px;
+    background: @brand-danger;
+    text-align: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+#version-text{
+    font-family: @font-family-base;
+    font-size: @font-size-base;
+    color: @white;
+    letter-spacing: 0.85px;
+}

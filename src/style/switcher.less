@@ -1,0 +1,90 @@
+.btn-max{
+    font-size: @font-size-large;
+    padding: @padding-base-horizontal @padding-large-horizontal;
+    width: 100%;
+}
+.btn-large{
+    font-size: @font-size-large;
+    padding: @padding-base-horizontal @padding-large-horizontal;
+    margin: @line-height-computed auto;
+    width: 270px !important;
+    max-width: 100%;
+    @media (max-width: @screen-sm-min) {
+        float: right;
+        margin-right: 1em;
+        .clearfix();
+    }
+    @media (max-width: @screen-xs) {
+        float: right;
+        margin-right: 1em;
+        .clearfix();
+    }
+}
+.btn-huge{
+    font-size: @font-size-large;
+    padding: @padding-base-horizontal @padding-large-horizontal;
+    margin: @line-height-computed auto;
+    width: 285px !important;
+    max-width: 100%;
+    @media (max-width: @screen-sm-min) {
+        float: right;
+        margin-right: 1em;
+        .clearfix();
+    }
+    @media (max-width: @screen-xs) {
+        float: right;
+        margin-right: 1em;
+        .clearfix();
+    }
+}
+.btn-switch-huge{
+    width: 570px !important;
+    max-width: 100%;
+}
+.btn-switch-large{
+    width: 540px !important;
+    max-width: 100%;
+}
+
+.btn-switcher{
+    display: inline-block;
+    margin: @line-height-computed auto;
+    max-width: 100%;
+    width: inherit;
+    border: 1px solid transparent;
+    -webkit-border-radius: @border-radius-large;
+            border-radius: @border-radius-large;
+    label{
+        display: inline-block;
+        margin: 0;
+        width: 50%;
+        height: 100%;
+        font-size: @font-size-large;
+        padding: @line-height-computed;
+        text-align: center;
+        vertical-align: middle;
+        cursor: pointer;
+        &:first-child{
+        }
+    }
+    input{
+        display: none !important;
+    }
+    & label:first-of-type{
+        -webkit-border-radius: 6px 0 0 6px;
+                border-radius: 6px 0 0 6px;
+    }
+    & label:last-of-type{
+        float: right;
+        -webkit-border-radius: 0 6px 6px 0;
+                    border-radius: 0 6px 6px 0;
+    }
+}
+
+
+.btn-switch-large{
+        .switch-size(@padding-large-vertical; @padding-large-horizontal; @font-size-large; @line-height-large; @btn-border-radius-large);
+}
+.btn-switch-primary{
+    .button-switch-variant( @btn-primary-color; @btn-primary-bg; @btn-primary-border);
+}
