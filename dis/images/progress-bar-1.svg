@@ -39,9 +39,9 @@
 <use class="" />
 <g>
 	<!-- first bar -->
-	<text font-family="Verdana" font-size="75px" x="45px" y="75px" fill="#4ABEF1">100% из 100%</text>
+	<text font-family="Verdana" font-size="75px" x="45px" y="75px" fill="#4ABEF1">{{svg.progress[2]}}% из 100%</text>
 	<path d="M 40 100 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
-  	<path class="fill-bar-path Animate-Draw" d="M 40 100 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" />
+  	<path class="fill-bar-path Animate-Draw" d="M 40 100 l {{svg.progress[2] * 10}} 0 a 40 20 0 0 1 0 40 l -{{svg.progress[2]  * 10}} 0 a 40 20 0 0 1 0 -40z" />
   	<!-- second bar -->
   	<!-- <text font-family="Verdana" font-size="75px" x="1110px" y="25px" fill="#4ABEF1">100% из 100%</text>
 	<path d="M 1100 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />

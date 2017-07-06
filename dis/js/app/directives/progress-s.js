@@ -1,0 +1,3 @@
+angular.module("smartsport.season", ['smartsport'])
+.controller()
+//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJhcHAvZGlyZWN0aXZlcy9wcm9ncmVzcy1zLmpzIl0sInNvdXJjZXNDb250ZW50IjpbImFuZ3VsYXIubW9kdWxlKFwic21hcnRzcG9ydC5zZWFzb25cIiwgWydzbWFydHNwb3J0J10pXHJcbi5jb250cm9sbGVyKCkiXSwiZmlsZSI6ImFwcC9kaXJlY3RpdmVzL3Byb2dyZXNzLXMuanMifQ==

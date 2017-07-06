@@ -1,0 +1,77 @@
+{
+  "records": [{
+      "progress": ["100", "100", "10"]
+    }, {
+      "seasons": [{
+        "id": 36,
+        "dateFrom": "25-05-2017",
+        "dateTo": "20-07-2017",
+        "schedules": [{
+            "timeFrom": 28800,
+            "timeTo": 72000,
+            "days": ["mon", "tue", "wed", "thu", "fri"]
+          },
+          {
+            "timeFrom": 36000,
+            "timeTo": 64800,
+            "days": ["sat", "sun"]
+          }
+        ]
+      },
+      {
+        "id": 35,
+        "dateFrom": "01-06-2017",
+        "dateTo": "30-06-2017",
+        "schedules": [{
+            "timeFrom": 28800,
+            "timeTo": 72000,
+            "days": ["mon", "tue", "wed", "thu"]
+          },
+          {
+            "timeFrom": 36000,
+            "timeTo": 64800,
+            "days": ["sat", "sun"]
+          }
+        ]
+      }
+
+    ]
+    }, {
+      "categories": ["USA", "Mexico", "Russian", "France", "Ukraine", "China", "Korea"]
+    }, {
+      "bathrooms": [{
+          "id": 65,
+          "title": "half"
+        },
+        {
+          "id": 98,
+          "title": "second"
+        }
+      ]
+    }, {
+      "prices": [{
+          "id": 11,
+          "season": 36,
+          "bathroom": 65,
+          "category": "Russian",
+          "type": "athlete"
+        },
+        {
+          "id": 11,
+          "season": 36,
+          "bathroom": 65,
+          "category": "Mexico",
+          "type": "lane"
+        },
+        {
+          "id": 11,
+          "season": 36,
+          "bathroom": 65,
+          "category": null,
+          "type": "swimming"
+        }
+      ]
+    }
+
+  ]
+}

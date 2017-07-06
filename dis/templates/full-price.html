@@ -1,0 +1,113 @@
+<span>
+    <h2 class="season-title v-huge">Можно ли арендовать полностью: ванна 1?</h2>
+    <span class="season-subtitle v-middle">(Для соревнований или других мероприятий)</span>
+    <div class="row">
+      <div class="col-lg-5 col-sm-12 col-xs-12">
+        <!-- start button toggle block -->
+        <div class="btn-switcher btn-switch-primary btn-switch-large v-large" ng-init='season.fullPrice = false'>
+          <input id="btn-toggle-different-bath-rent-all-1" ng-model="season.fullPrice" class="btn-toggle-input" type="radio" name="bath-rent-all" ng-value="true" >
+          <label for="btn-toggle-different-bath-rent-all-1" class="btn-toggle-label">
+            Да
+          </label>
+          <input id="btn-toggle-different-bath-rent-all-2" ng-model="season.fullPrice" class="btn-toggle-input" type="radio" name="bath-rent-all" ng-value="false" checked>
+          <label for="btn-toggle-different-bath-rent-all-2" class="btn-toggle-label">
+            Нет
+          </label>
+        </div>
+<!-- end button toggle block -->
+      </div>
+    </div>
+      <div class="row v-huge">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle">Цена</span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <p class="center-text"> <span class="season-subtitle">За час</span></p>
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <p class="center-text"> <span class="season-subtitle">За день</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="row v-middle">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle v-large">Плавание</span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.one" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.two" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-1 col-sm-1 hidden-xs">
+          <span class="season-subtitle v-large">грн</span>
+        </div>
+      </div>
+    </div>
+    <div class="row v-middle">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle v-large">Ватерполо</span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.three" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.four" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-1 col-sm-1 hidden-xs">
+          <span class="season-subtitle v-large">грн</span>
+        </div>
+      </div>
+    </div>
+    <div class="row v-middle">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle v-large nowrap">Синхронное плавание</span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.five" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.six" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-1 col-sm-1 hidden-xs">
+          <span class="season-subtitle v-large">грн</span>
+        </div>
+      </div>
+    </div>
+    <div class="row v-middle">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle v-large">Прыжки в воду  </span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.seven" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.eight" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-1 col-sm-1 hidden-xs">
+          <span class="season-subtitle v-large">грн</span>
+        </div>
+      </div>
+    </div>
+        <div class="row v-middle">
+      <div class="col-lg-2 col-sm-2 col-xs-4">
+        <span class="season-subtitle v-large">Турниры</span>
+      </div>
+      <div class="col-lg-10 col-sm-10 col-xs-8">
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.nine" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-2 col-sm-3 col-xs-6">
+          <input class="form-control" type="number" ng-model="price.season.ten" name="end-time-shedule-1" placeholder="">
+        </div>
+        <div class="col-lg-1 col-sm-1 hidden-xs">
+          <span class="season-subtitle v-large" >грн</span>
+        </div>
+      </div>{{price.season.ten}}
+    </div>
+</span>

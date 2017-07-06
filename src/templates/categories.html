@@ -1,0 +1,46 @@
+   <span>
+    <div class="row">
+      <h2 class="season-title">Различаются ли у Вас цены для разных категорий граждан?</h2>
+    </div>
+    <div class="row">
+      <div class="col-lg-5 col-sm-5 col-xs-12">
+<!-- start button toggle block -->
+        <div class="btn-switcher btn-switch-primary btn-switch-large" ng-init="season.category = true">
+          <input id="btn-toggle-different-citizen-price-1" ng-model="season.category" class="btn-toggle-input" type="radio" name="different-citizen-price" ng-value="true" checked>
+          <label for="btn-toggle-different-citizen-price-1" class="btn-toggle-label">
+            Да
+          </label>
+          <input id="btn-toggle-different-citizen-price-2" ng-model="season.category" class="btn-toggle-input" type="radio" name="different-citizen-price" ng-value="false">
+          <label for="btn-toggle-different-citizen-price-2" class="btn-toggle-label">
+            Нет
+          </label>
+        </div>
+<!-- end button toggle block -->
+      </div>
+    </div>
+    <div class="row" ng-if="season.category">
+      <form>
+      <div class="col-lg-5 col-sm-12 col-xs-12">
+      <div class="row hidden-lg hidden-sm hidden-md">
+        <div class="col-xs-8">
+          <input class="form-control" type="text" id="category-new" ng-model="category.new" name="">
+        </div>
+        <div class="col-xs-4">
+          <input class="btn btn-sm v-middle btn-primary pull-left" type="submit" name="" ng-click="add(category.new)"  value="Сохранить">
+        </div>
+      </div>
+        <input class="form-control hidden-xs" type="text" ng-model="category.new" name="">
+        <table class="table-list">
+          <tr ng-repeat="category in categories">
+            <td><span class="country-name">{{category}}</span></td>
+            <td ng-click="remove($index)"><span class="delete-cross pull-right"></span></td>
+          </tr>
+        </table>
+      <span class="btn btn-bordered-default btn-large hidden-xs"> Добавить категорию </span>
+      </div>
+      <div class="col-lg-5 col-sm-12 hidden-xs">
+        <input class="btn btn-lg btn-primary pull-left" type="submit" name="" ng-click="add(category.new)"  value="Сохранить">
+      </div>
+    </div>
+    </form>
+    </span>

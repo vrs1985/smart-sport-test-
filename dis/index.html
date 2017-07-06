@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="smartsport" ng-cloak ng-controller="MainCtrl">
 <head>
   <meta charset="UTF-8">
   <title>SmartSport | добавлениe цен спортивного сооружения</title>
@@ -8,15 +8,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/css/bootstrap-datepicker.standalone.min.css">
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.0/js/bootstrap-datepicker.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment-with-locales.min.js"></script>
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="style/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-route.min.js"></script>
 </head>
 <body>
-<section id="version">
+ <section id="version">
 <div class="container">
   <div class="row">
     <div class="col-lg-12 col-sm-12 col-xs-12 ">
@@ -27,425 +27,24 @@
   </div>
 </div>
 </section>
-<header class="header">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-sm-12 col-xs-12">
-      <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">
-        <img src="images/logo.png" alt="" class="header-logo">
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav nav-tabs navbar-inverse">
-          <li><a href="#">Спортивные комплексы </a></li>
-          <li><a href="#">Отели </a></li>
-          <li><a href="#">Новости </a></li>
-          <li><a href="#">События </a></li>
-          <li><input type="submit" class="btn btn-bordered-default bg-none" value="Зарегистрировать спорт. сооружение" /></li>
-          <li class="margin-xs">
-            <ul class="chg-lang">
-            <li class="chg-lang-content"><a href="">RU <i class="fa fa-caret-down" aria-hidden="true"></i></a></li>
-            <li class="chg-lang-content"><a href="">EN</a></li>
-          </ul>
-          <span class="header-signIn">
-            <a href="#">
-              <i class="header-signIn-logo fa fa-user" aria-hidden="true""> </i>
-              <span class="header-signIn-text">Sign in</span>
-            </a>
-          </span>
-          </li>
-        </ul>
-        </div>
-        </div>
-      </div>
-  </div>
-</header>
+<header-smartsport></header-smartsport>
 
 <!-- START SEASON FORM -->
-<section class="season">
+<section class="season" ng-controller="SeasonPageCtrl">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-12 col-sm-12 col-xs-12">
-        <span class="season-subtitle text-primary">
-          Шаг 3: условия и цены
-        </span>
-        <h2 class="season-title">
-          Условия и цены
-        </h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-8 col-sm-8 col-xs-12">
-        <div class="row">
-          <div class="col-lg-4 col-sm-12 col-xs-12">
-            <object width="100%" height="auto" class="season-progress-bar">
-              <embed src="images/progress-bar-1.svg"></embed>
-            </object>
-          </div>
-          <div class="col-lg-4 col-sm-12 col-xs-12">
-            <object width="100%" height="auto" class="season-progress-bar">
-              <embed src="images/progress-bar-2.svg"></embed>
-            </object>
-          </div>
-          <div class="col-lg-4 col-sm-12 col-xs-12">
-            <object width="100%" height="auto" class="season-progress-bar">
-              <embed src="images/progress-bar-2.svg"></embed>
-            </object>
-          </div>
-        </div>
-        <h2 class="season-title">Отличается ли цена по сезонам?</h2 class="season-title">
-<!-- start button toggle block -->
-        <div class="btn-switcher btn-switch-primary btn-switch-large">
-          <input id="btn-toggle-different-price" class="btn-toggle-input" type="radio" name="different-price" value="1" checked>
-          <label for="btn-toggle-different-price" class="btn-toggle-label">
-            Да
-          </label>
-          <input id="btn-toggle-different-price-2" class="btn-toggle-input" type="radio" name="different-price" value="1">
-          <label for="btn-toggle-different-price-2" class="btn-toggle-label">
-            Нет
-          </label>
-        </div>
-<!-- end button toggle block -->
-        <div class="row">
-          <div class="col-lg-5 col-sm-5 col-xs-12">
-            <span class="btn btn-lg btn-large btn-primary">
-              Сезон 1
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4 col-sm-4 col-xs-12">
-<!-- start help block -->
-        <figure class="season-help">
-          <object class="season-help-picture" width="30%" height="50%">
-            <embed src="images/bulb.svg"></embed>
-          </object>
-          <figcaption class="season-help-text">
-            Условия и цены <br>
-            Ценообразование для Спортивного комплекса и плавательного бассейна.
-          </figcaption>
-        </figure>
-        <!-- end help block -->
-              </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12 col-xs-12 col-lg-12">
-      <div class="row">
-        <div class="col-lg-10 col-sm-10 col-xs-12">
-          <span class="season-subtitle">Сезон 1</span>
-        <div class="input-group input-daterange">
-        <!-- start datepicker twbs elems -->
-        <div class="input-daterange input-group" id="date_range">
-            <div class="datepicker-group">
-              <input type="text" class="datepicker-input input-sm form-control " name="startDate" />
-            </div>
-            <div class="datepicker-group">
-              <input type="text" class="datepicker-input input-sm form-control" name="endDate" />
-            </div>
-        </div>
-        <!-- end datepicker twbs elems -->
-      </div>
-        </div>
-      </div>
 
-    <!-- start set shedule -->
-    <h4>График работы сезон 1</h4>
-    <div class="row">
-      <div class="col-lg-10 col-xs-12 col-sm-12">
+<progress-season></progress-season>
 
-          <form class="form-inline" role="form" name="working-shedul-1">
-            с
-            <div class="form-group">
-            <input class="shedule-input-time form-control" type="text" name="start-time-shedule-1" placeholder="06:00">
-            </div>
-            до
-            <div class="form-group">
-            <input class="shedule-input-time form-control" type="text" name="end-time-shedule-1" placeholder="22:00">
-          </div>
-          <div class="checkbox">
-              <input class="form-control" type="checkbox" id="shedule-day-1" value="1">
-              <label for="shedule-day-1">Пн</label>
-              <input class="form-control" type="checkbox" id="shedule-day-2" value="2">
-              <label for="shedule-day-2">Вт</label>
-              <input class="form-control" type="checkbox" id="shedule-day-3" value="3">
-              <label for="shedule-day-3">Ср</label>
-              <input class="form-control" type="checkbox" id="shedule-day-4" value="4">
-              <label for="shedule-day-4">Чт</label>
-              <input class="form-control" type="checkbox" id="shedule-day-5" value="5">
-              <label for="shedule-day-5">Пт</label>
-              <input class="form-control" type="checkbox" id="shedule-day-6" value="6">
-              <label for="shedule-day-6">Сб</label>
-              <input class="form-control" type="checkbox" id="shedule-day-0" value="0">
-              <label for="shedule-day-0">Вс</label>
-          </div>
-          </form>
-          <form class="form-inline" role="form" name="working-shedul-1">
-            с
-            <div class="form-group">
-            <input class="shedule-input-time form-control" type="text" name="start-time-shedule-1" placeholder="06:00">
-            </div>
-            до
-            <div class="form-group">
-            <input class="shedule-input-time form-control" type="text" name="end-time-shedule-1" placeholder="22:00">
-          </div>
-          <div class="checkbox">
-              <input class="form-control" type="checkbox" id="shedule-day-6" value="6">
-              <label for="shedule-day-6">Сб</label>
-              <input class="form-control" type="checkbox" id="shedule-day-0" value="0">
-              <label for="shedule-day-0">Вс</label>
-          </div>
-          </form>
+<shedule-season data-seasons="seasons" data-days="days"></shedule-season>
 
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-sm-3 col-xs-12">
+<categories-season></categories-season>
 
-        <input type="submit" class="btn btn-bordered-default btn-large" name="" value="Добавить график" />
-        </div>
-      </div>
+<bathrooms-season></bathrooms-season>
 
-    <!-- end set shedule -->
+<prices-season></prices-season>
 
-    </div>
+<full-price-season></full-price-season>
 
-    <h2 class="season-title">Различаются ли у Вас цены для разных категорий граждан?</h2>
-    <div class="row">
-      <div class="col-lg-5 col-sm-5 col-xs-12">
-<!-- start button toggle block -->
-        <div class="btn-switcher btn-switch-primary btn-switch-large">
-          <input id="btn-toggle-different-citizen-price-1" class="btn-toggle-input" type="radio" name="different-citizen-price" value="1" checked>
-          <label for="btn-toggle-different-citizen-price-1" class="btn-toggle-label">
-            Да
-          </label>
-          <input id="btn-toggle-different-citizen-price-2" class="btn-toggle-input" type="radio" name="different-citizen-price" value="1">
-          <label for="btn-toggle-different-citizen-price-2" class="btn-toggle-label">
-            Нет
-          </label>
-        </div>
-<!-- end button toggle block -->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-5 col-sm-12 col-xs-12">
-        <input class="form-control" type="text" name="">
-        <table class="table-list">
-          <tr>
-            <td><span class="country-name">USA</span></td>
-            <td><span class="delete-cross pull-right"></span></td>
-          </tr>
-        </table>
-      <input type="submit" class="btn btn-bordered-default btn-large" name="" value="Добавить категорию">
-      </div>
-      <div class="col-lg-5 col-sm-12 col-xs-12">
-        <input class="btn btn-lg btn-primary pull-left" type="submit" name="" value="Сохранить">
-      </div>
-    </div>
-
-    <h2 class="season-title v-large">Различается ли у Вас цена для разных ванн?</h2>
-    <div class="row">
-      <div class="col-lg-5 col-sm-12 col-xs-12">
-<!-- start button toggle block -->
-        <div class="btn-switcher btn-switch-primary btn-switch-large">
-          <input id="btn-toggle-different-bath-price-1" class="btn-toggle-input" type="radio" name="different-bath-price" value="1" checked>
-          <label for="btn-toggle-different-bath-price-1" class="btn-toggle-label">
-            Да
-          </label>
-          <input id="btn-toggle-different-bath-price-2" class="btn-toggle-input" type="radio" name="different-bath-price" value="1">
-          <label for="btn-toggle-different-bath-price-2" class="btn-toggle-label">
-            Нет
-          </label>
-        </div>
-<!-- end button toggle block -->
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 col-sm-6 col-xs-6">
-        <span class="season-subtitle v-large">Выберите длину сессии</span>
-      </div>
-      <div class="col-lg-4 col-sm-6 col-xs-6">
-        <select class="form-control" name="session_time">
-          <option value="30">30</option>
-          <option value="45">45</option>
-          <option value="60">60</option>
-          <option value="90">90</option>
-        </select>
-        <i class="caret-down"></i>
-        <strong>мин</strong>
-      </div>
-    </div>
-    <h2 class="season-title v-large">Сезон 1, Ванна 1</h2>
-    <div class="row v-large">
-      <div class="col-lg-2 col-sm-4 hidden-xs v-large">
-        <span class="season-subtitle v-large">Укажите цены для:</span>
-      </div>
-      <div class="col-lg-8 col-sm-8 col-xs-12 v-large">
-        <div class="btn-group">
-          <span class="btn btn-bordered-primary btn-lg caregory">Категория 1</span >
-          <span class="btn btn-bordered-primary btn-lg caregory">Категория 2</span >
-          <span class="btn btn-bordered-primary btn-lg caregory">Категория 3</span >
-        </div>
-      </div>
-    </div>
-    <div class="row v-huge">
-      <div class="col-lg-2 col-sm-2 col-xs-8">
-        <p class="v-large">Атлет / сессия</p>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-12">
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <p class="v-large">грн</p>
-        </div>
-      </div>
-    </div>
-    <div class="row v-huge">
-      <div class="col-lg-2 col-sm-2 col-xs-8">
-        <p class="v-large">Дорожка / сессия</p>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-12">
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-4">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="0000,00">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <p class="v-large">грн</p>
-        </div>
-      </div>
-    </div>
-
-    <h2 class="season-title v-huge">Можно ли арендовать полностью: ванна 1?</h2>
-    <span class="season-subtitle v-middle">(Для соревнований или других мероприятий)</span>
-    <div class="row">
-      <div class="col-lg-5 col-sm-12 col-xs-12">
-        <!-- start button toggle block -->
-        <div class="btn-switcher btn-switch-primary btn-switch-large v-large">
-          <input id="btn-toggle-different-bath-rent-all-1" class="btn-toggle-input" type="radio" name="bath-rent-all" value="1" checked>
-          <label for="btn-toggle-different-bath-rent-all-1" class="btn-toggle-label">
-            Да
-          </label>
-          <input id="btn-toggle-different-bath-rent-all-2" class="btn-toggle-input" type="radio" name="bath-rent-all" value="1">
-          <label for="btn-toggle-different-bath-rent-all-2" class="btn-toggle-label">
-            Нет
-          </label>
-        </div>
-<!-- end button toggle block -->
-      </div>
-    </div>
-    <div class="row v-huge">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle">Цена</span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <p class="center-text"> <span class="season-subtitle">За час</span></p>
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <p class="center-text"> <span class="season-subtitle">За день</span></p>
-        </div>
-      </div>
-    </div>
-    <div class="row v-middle">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle v-large">Плавание</span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <span class="season-subtitle v-large">грн</span>
-        </div>
-      </div>
-    </div>
-    <div class="row v-middle">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle v-large">Ватерполо</span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <span class="season-subtitle v-large">грн</span>
-        </div>
-      </div>
-    </div>
-    <div class="row v-middle">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle v-large nowrap">Синхронное плавание</span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <span class="season-subtitle v-large">грн</span>
-        </div>
-      </div>
-    </div>
-    <div class="row v-middle">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle v-large">Прыжки в воду  </span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <span class="season-subtitle v-large">грн</span>
-        </div>
-      </div>
-    </div>
-        <div class="row v-middle">
-      <div class="col-lg-2 col-sm-2 col-xs-4">
-        <span class="season-subtitle v-large">Турниры</span>
-      </div>
-      <div class="col-lg-10 col-sm-10 col-xs-8">
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-2 col-sm-3 col-xs-6">
-          <input class="form-control" type="number" name="end-time-shedule-1" placeholder="">
-        </div>
-        <div class="col-lg-1 col-sm-1 hidden-xs">
-          <span class="season-subtitle v-large" >грн</span>
-        </div>
-      </div>
-    </div>
     <div class="row v-huge">
       <div class="col-lg-8 col-sm-12 col-xs-12">
         <textarea rows="6" class="form-control" placeholder="Комментарий к ценообразованию"></textarea>
@@ -466,72 +65,9 @@
   <!-- END SEASON FORM -->
 
 </section>
-<footer class="ftr">
-<div class="container">
-    <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-sm-12 col-xs-12">
-        <img src="images/logo.png" alt="" class="ftr-logo">
-        <p class="ftr-about-text">
-          Smartsport.com - the first global booking platform for sport
-          facilities and sport teams in swimming, water polo, weightlifting, gymnastics, martial arts, tennis,
-          football and other team sports training camps.
-        </p>
-      </div>
-      <div class="col-lg-2 col-sm-12 col-xs-12">
-        <h3 class="ftr-title">menu</h3>
-        <ul class="ftr-nav-menu">
-          <li class="ftr-nav-tab">
-            <a href="">Sport Complexes</a>
-          </li>
-          <li class="ftr-nav-tab">
-            <a href="">Hotels</a>
-          </li>
-          <li class="ftr-nav-tab">
-            <a href="">News</a>
-          </li>
-          <li class="ftr-nav-tab">
-            <a href="">Events</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-12 col-xs-12">
-        <h3 class="ftr-title">Contact info</h3>
-        <ul class="ftr-contact-info">
-          <li class="ftr-contact-email">
-              <a href="mailto:sales@smartsport.com">
-                sales@smartsport.com
-              </a>
-          </li>
-          <li class="ftr-contact-phone">
-              <a href="tel:+4915735995225">+49 157 359 952 25</a>
-          </li>
-          <li class="ftr-contact-phone">
-              <a href="tel:+74994042608">+7 499 404 26 08</a>
-          </li>
-          <li class="ftr-contact-phone">
-              +38 095 721 26 18 Viber, WhatsApp, Telegram
-          </li>
-          <li class="ftr-contact-skype">
-              <a href="skype:smartsport.com">smartsport.com</a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-sm-12 col-xs-12">
-        <h3 class="ftr-title">Social</h3>
-        <a href="" class="ftr-soc-media smedia-vk"></a>
-        <a href="" class="ftr-soc-media smedia-facebook"></a>
-        <a href="" class="ftr-soc-media smedia-linkedin"></a>
-        <a href="" class="ftr-soc-media smedia-youtube"></a>
-        <a href="" class="ftr-soc-media smedia-twitter"></a>
-      </div>
-    </div>
-  </div>
-  <div class="ftr-engine">
-        <span>v-jetEngine</span>
-  </div>
-</div>
-</footer>
+
+<footer-smartsport></footer-smartsport>
+
 <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

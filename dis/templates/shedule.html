@@ -1,0 +1,94 @@
+    <span>
+    <div class="row">
+      <div class="col-lg-8 col-sm-8 col-xs-12">
+
+        <h2 class="season-title">Отличается ли цена по сезонам?</h2 class="season-title">
+<!-- start button toggle block -->
+        <div class="btn-switcher btn-switch-primary btn-switch-large" ng-init="season.shedule = true">
+          <input id="btn-toggle-different-price" ng-model="season.shedule" class="btn-toggle-input" type="radio" name="different-price" ng-value="true" checked>
+          <label for="btn-toggle-different-price" class="btn-toggle-label">
+            Да
+          </label>
+          <input id="btn-toggle-different-price-2" ng-model="season.shedule" class="btn-toggle-input" type="radio" name="different-price" ng-value="false">
+          <label for="btn-toggle-different-price-2" class="btn-toggle-label">
+            Нет
+          </label>
+        </div>
+<!-- end button toggle block -->
+
+        <div class="row">
+          <div class="col-lg-5 col-sm-5 col-xs-12">
+            <span class="btn btn-lg btn-large btn-primary">
+              Сезон
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-4 col-xs-12">
+<!-- start help block -->
+        <figure class="season-help">
+          <object class="season-help-picture" width="30%" height="50%">
+            <embed src="images/bulb.svg"></embed>
+          </object>
+          <figcaption class="season-help-text">
+            Условия и цены <br>
+            Ценообразование для Спортивного комплекса и плавательного бассейна.
+          </figcaption>
+        </figure>
+        <!-- end help block -->
+              </div>
+    </div>
+
+        <span ng-repeat="timetable in seasons"> {{timetable}}
+          <div class="row" ng-show="season.shedule">
+              <div class="col-lg-10 col-sm-10 col-xs-12">
+                <span class="season-subtitle">Сезон {{$index + 1}}</span>
+                <!-- start datepicker twbs elems -->
+                  <div class="row datepicker">
+                  <div class="col-lg-5 col-sm-5 col-xs-6" >
+                    <input type="text" name="timeFrom" ng-init="dateFrom=timetable.dateFrom" ng-model="dateFrom" class="datepicker-input form-control" ng-pattern="/([0-9]{2}-[0-9]{2}-[0-9]{4})/" datepicker placeholder="{{defDate.now | date: 'dd-MM-yyyy'}}" />
+                    <span class="datepicker-group"></span>
+                    </div>
+                    <div class="col-lg-5 col-sm-5 col-xs-6 pull-left" id="datepicker">
+                    <input type="text" name="timeTo" ng-init="dateTo=timetable.dateTo" class="datepicker-input form-control {{ err.className }}" ng-model="dateTo" ng-pattern="/([0-9]{2}-[0-9]{2}-[0-9]{4})/" datepicker title="{{ err.data }}" placeholder="{{defDate.now | date: 'dd-MM-yyyy'}}" />
+                    <span class="datepicker-group"></span>
+                  </div>
+                  <p class="alert-danger" ng-if="Shedule.timeFrom.$error.pattern || Shedule.timeTo.$error.pattern">Пожалуйста введите корректную дату</p>
+                  </div>
+              <!-- end datepicker twbs elems -->
+              </div>
+            </div>
+          <!-- start set shedule -->
+
+          <form class="form-inline" ng-submit="shedule()" role="form" name="Shedule" novalidate>
+          <h4 ng-if="season.shedule">График работы сезон 1</h4>
+          <div class="row" ng-show="season.shedule">
+            <div class="col-lg-10 col-xs-12 col-sm-12">
+                <div class="shedules-child" ng-repeat="shedule in timetable.schedules track by $index" class="col-lg-12 col-xs-12 col-sm-12">
+                  с
+                  <div class="form-group">
+                  <input type="time" class="shedule-input-time form-control" timepicker data-time="shedule.timeFrom" ng-model="worktimeOneFrom" ng-pattern="/([0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1})/" name="worktimeOneFrom" ng-blur="workTime(worktimeOneFrom)" value="HH:MM"  />
+                  </div>
+                  до
+                  <div class="form-group">
+                  <input class="shedule-input-time form-control" timepicker data-time="shedule.timeTo" ng-model="worktimeOneTo" ng-pattern="/([0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1})/" ng-minlength="4" ng-maxlength="4" type="time" name="worktimeOneTo" value="HH:MM" >
+                  </div>
+                  <div class="checkbox">
+                    <span ng-repeat="day in shedule['days']">
+                      <input class="form-control checkbox-day-input"  type="checkbox" item="day" checked="checked" default-days="days" checkDays="shedule.days" checkbox-day-input/>
+                      <label item="day" default-days="days" checkbox-day-label></label>
+                    </span>
+                  </div>
+
+                  <p class="alert-warning">busy {{days.selected}}<br>free {{days.unselected}}</p>
+                  <div class="alert-danger" ng-show="Shedule.worktimeOneFrom.$error.pattern || Shedule.worktimeOneTo.$error.pattern">Введите пожалуйста время "ЧЧММ"</div>
+                </div>
+                </form>
+          </div>
+    </span>
+      <div class="row" ng-show="season.shedule">
+        <div class="col-lg-3 col-sm-3 col-xs-12">
+        <input type="submit" class="btn btn-bordered-default btn-large" default-days="days" add-new-shedule value="Добавить график" />
+        </div>
+      </div>
+      </span>

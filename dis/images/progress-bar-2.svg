@@ -43,9 +43,9 @@
 	<path d="M 40 100 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
   	<path class="fill-bar-path Animate-Draw" d="M 40 100 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 1 0 -40z" /> -->
   	<!-- second bar -->
-  	<text font-family="Verdana" font-size="75px" x="45px" y="75px" fill="#4ABEF1">60% из 100%</text>
+  	<text font-family="Verdana" font-size="75px" x="45px" y="75px" fill="#4ABEF1">{{item}}% из 100%</text>
 	<path d="M 40 100 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />
-  	<path class="fill-bar-path Animate-Draw" d="M 40 100 l 600 0 a 40 20 0 0 1 0 40 l -600 0 a 40 20 0 0 0 0 -40z"  />
+  	<path class="fill-bar-path Animate-Draw" d="M 40 100 l {{item * 10}} 0 a 40 20 0 0 1 0 40 l -{{item * 10}} 0 a 40 20 0 0 0 0 -40z"  />
 	<!-- third bar -->
 	<!-- <text font-family="Verdana" font-size="75px" x="2160px" y="25px" fill="#4ABEF1">10% из 100%</text>
 	<path d="M 2150 80 l 1000 0 a 40 20 0 0 1 0 40 l -1000 0 a 40 20 0 0 0 0 -40z" stroke="#DCDCDC" stroke-width="2" fill="#DCDCDC" />

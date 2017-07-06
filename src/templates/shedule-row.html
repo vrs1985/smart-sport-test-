@@ -1,0 +1,18 @@
+<!-- start new clear row with time and checkbox -->
+  <div id="emptyCheckboxRow" >
+  с
+  <div class="form-group">
+    <input type="time" class="shedule-input-time form-control" timepicker ng-model="worktimeOneFrom" ng-pattern="/([0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1})/" name="worktimeOneFrom" value="HH:MM"  />
+  </div>
+  до
+  <div class="form-group">
+   <input type="time" class="shedule-input-time form-control" timepicker ng-model="worktimeOneTo" ng-pattern="/([0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1})/" name="worktimeOneTo" value="HH:MM" >
+  </div>
+  <div class="checkbox">
+    <span ng-repeat="day in days['unselected']">
+      <input class="form-control checkbox-day-input" type="checkbox" checkbox-day-input/>
+      <label checkbox-day-label></label>
+    </span>
+  </div>
+</div>
+<!-- end new clear row with time and checkbox -->

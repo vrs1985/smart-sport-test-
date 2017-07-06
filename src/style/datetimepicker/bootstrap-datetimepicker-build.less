@@ -1,0 +1,23 @@
+// Import bootstrap variables including default color palette and fonts
+@import "../bootstrap/variables.less";
+
+.input-daterange{
+    width: 550px;
+    max-width: 100%;
+    padding: @line-height-computed;
+}
+.datepicker-input{
+    float: left;
+
+}
+.icon-datepicker{
+    &:after{
+        color: @input-border;
+        font-family: FontAwesome;
+        content: "\f073";
+        font-size: @font-size-h3;
+    }
+}
+.input-group-addon{
+    width: 1px;
+}
