@@ -73,9 +73,9 @@
                   <div class="form-group">
                   <input class="shedule-input-time form-control" timepicker data-time="shedule.timeTo" ng-model="worktimeOneTo" ng-pattern="/([0-2]{1}[0-9]{1}:[0-5]{1}[0-9]{1})/" ng-minlength="4" ng-maxlength="4" type="time" name="worktimeOneTo" value="HH:MM" >
                   </div>
-                  <div class="checkbox">
+                  <div class="checkbox" add-free-checkbox>
                     <span ng-repeat="day in shedule['days']">
-                      <input class="form-control checkbox-day-input"  type="checkbox" item="day" checked="checked" default-days="days" checkDays="shedule.days" checkbox-day-input/>
+                      <input class="form-control checkbox-day-input"  type="checkbox" name="{{day}}" item="day" checked="checked" default-days="days" checkDays="shedule.days" checkbox-day-input/>
                       <label item="day" default-days="days" checkbox-day-label></label>
                     </span>
                   </div>
