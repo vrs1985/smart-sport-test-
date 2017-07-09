@@ -11,7 +11,7 @@ function checkboxDayLabel() {
       var index = days['en'].indexOf(item);
       elem.html(days['ru'][index]);
       days['selected'].push(item);
-      days['unselected'].splice(days['unselected'].indexOf(index), 1);
+      days['unselected'].splice(days['unselected'].indexOf(item), 1);
     }
   };
 };
